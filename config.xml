@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="305cd " id="com.nucleo.novopharm" version="1.3.3" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Novopharm</name>
+    <description>
+       Novopharm
+    </description>
+    <author email="dev@n4ymedio.mx" href="n4ymedio.mx">
+        Nucleo 4 y Medio
+    </author>
+    <content src="index.html" />
+    <preference name="permissions" value="none" />
+    <preference name="orientation" value="portrait" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="true" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-installLocation" value="auto" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="target-device" value="handset" />
+    <preference name="BackgroundColor" value="0x0000" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="ios-statusbarstyle" value="black-opaque" />
+    <preference name="HideKeyboardFormAccessoryBar" value="true" />
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <preference name="SplashScreenDelay" value="0" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="SplashScreenBackgroundColor" value="0xffff" />
+    <preference name="SplashShowOnlyFirstTime" value="true" />
+    <splash src="splash.png" />
+    <icon src="icon.png" />
+    <splash height="480" platform="ios" src="Default.png" width="320" />
+    <splash height="960" platform="ios" src="Default@2x.png" width="640" />
+    <splash height="1136" platform="ios" src="Default-568h@2x.png" width="640" />
+    <splash height="1334" platform="ios" src="Default-667h@2x.png" width="750" />
+    <splash height="2208" platform="ios" src="Default-Portrait-736h@3x.png" width="1242" />
+    <splash height="1242" platform="ios" src="Default-Landscape-736h@3x.png" width="2208" />
+    <splash height="1024" platform="ios" src="Default-Portrait.png" width="768" />
+    <splash height="768" platform="ios" src="Default-Landscape.png" width="1024" />
+    <splash height="2048" platform="ios" src="Default-Portrait@2x.png" width="1536" />
+    <splash height="1536" platform="ios" src="Default-Landscape@2x.png" width="2048" />
+    <access origin="*" subdomains="true" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
+    <preference name="EnableViewportScale" value="false" />
+    <access launch-external="yes" origin="geo:*" />
+    <access launch-external="yes" origin="google.navigation:*" />
+    <access origin="*://*.googleapis.com/*" subdomains="true" />
+    <access origin="*://*.gstatic.com/*" subdomains="true" />
+    <access origin="*://*.google.com/*" subdomains="true" />
+    <access origin="*://*.googleusercontent.com/*" subdomains="true" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <preference name="android-targetSdkVersion" value="26" />
+    <preference name="android-minSdkVersion" value="14" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <allow-navigation href="*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="wss://*/*" />
+    <allow-navigation href="data:*" />
+    <engine name="ios" spec="~4.0.0" />
+    <engine name="android" spec="~6.0.0" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-network-information" />
+    <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-file-transfer" />
+</widget>

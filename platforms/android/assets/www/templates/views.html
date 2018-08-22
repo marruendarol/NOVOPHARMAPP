@@ -1,0 +1,455 @@
+<!-- FIRST ============================================================-->
+<script id='firstT' type='text/ractive'>
+           <button class="btnGen" on-tap="login">Ingresar a mi cuenta</button>
+         <!--  <button class="btnGen" on-tap="registro">Registrar usuario nuevo</button> -->
+</script>
+
+
+
+<!--  HOME ============================================================-->
+	<script id='mainT' type='text/ractive'>
+
+	{{>menuT}}
+
+	 <div  id="headerLogo" data-position="fixed">
+        <div id="logoPant">
+		<img src="img/logoForma.png">
+	</div>
+
+     <!--   <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>  -->
+      <!--  <a href="#add-form" data-icon="gear" data-theme="a" class="gearIco ui-btn-right" data-iconpos="notext">Info</a> -->
+    </div><!-- /header -->
+
+
+    <div role="main" >
+           <div id="wrapperMain" class="mainBackI" >
+
+           <div class="botCont">
+       				<div class="listMenu" on-tap="getProductos">
+       					<div class="imgCont">
+       					<img class="imgMenuc" src="img/bot1.png">
+       					</div>
+					</div>
+
+					<div class="listMenu " on-tap="getCalculadora">
+						<div class="imgCont">
+						<img class="imgMenuc" src="img/bot2.png">
+						</div>
+					</div>
+
+					<div class="listMenu " on-tap="getAyuda">
+						<div class="imgCont">			
+						<img class="imgMenuc" src="img/bot3.png">
+						</div>
+					</div>
+
+					<div class="listMenu " on-tap="getNoticias">	
+						<div class="imgCont pad10">
+						<img class="imgMenuc" src="img/bot4.png">
+						</div>		
+					</div>
+
+			</div>	
+
+
+				<div class="icoRegistro" on-tap="getCliomedic">
+			<img src="img/logoClio.png">
+		</div>
+
+
+		</div>
+
+	
+
+
+    </div>
+ 
+     <!-- <div id="map" style="display:none;"></div> -->
+
+    </script>
+
+
+
+
+
+<!-- Listado 1  ============================================================-->
+<script id='listProductos' type='text/ractive'>
+
+	<div id="wrapperList" >
+	    <div id="scroller" >
+	        <ul data-role="listview" id="listview">
+	            {{#items}}
+	            <li  data-icon="false">
+	                <a class="autoli" on-tap="listDetail" data-transition="fade">
+	                   
+	                   	<div class="small-10 column rPad">
+	                        <div class="nSucursal">{{correctCase(nombre)}}</div>
+	                     
+	                    </div>
+
+	                    
+	                    <div class="small-1 column rPad">
+	                        <div class="fNaranja"> 
+	                        <img src="img/fNaranja.png">
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+	            {{/items}}
+	        </ul>
+
+	        {{#if items.length==0}}
+	        	<h4 style="margin:20px;"> no existen productos </h4>
+	        {{/if}}
+
+	    </div>
+	</div>
+
+</script>
+
+
+<!-- Listado Ayuda  ============================================================-->
+<script id='listAyuda' type='text/ractive'>
+
+	<div id="wrapperList" >
+
+    <div class="contsHead">
+          <div class="tit1">Ilustraciones de patologías inflamatorias.</div>
+          <p>A continuación se muestra un listado de patologías inflamatorias donde Dilar es indicado.</p>
+          </div>
+
+
+	    <div id="scroller" >
+
+
+
+	        <ul data-role="listview" id="listview">
+	            {{#items}}
+	            <li  data-icon="false">
+	                <a href="{{serverURL}}{{imagen[0].thumbnailUrl}}"  title="{{serverURL}}{{imagen[0].thumbnailUrl}}" class=" swipebox autoli" on-tap="" data-transition="fade">
+	                   
+	                   	<div class="small-10 column rPad">
+	                        <div class="nSucursal">{{titulo}}</div>
+	                     
+	                    </div>
+
+
+	                    
+	                    <div class="small-1 column rPad">
+	                        <div class="fNaranja"> 
+	                        <img src="img/fNaranja.png">
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+	            {{/items}}
+	        </ul>
+
+	        {{#if items.length==0}}
+	        	<h4 style="margin:20px;"> no existe ayuda </h4>
+	        {{/if}}
+
+	    </div>
+	</div>
+
+</script>
+
+
+<!-- Listado Noticias  ============================================================-->
+<script id='listNoticias' type='text/ractive'>
+
+	<div id="wrapperList" >
+	    <div id="scroller" >
+	        <ul data-role="listview" id="listview">
+	            {{#items}}
+	            <li  data-icon="false">
+	                <a class="autoli" on-tap="listDetail" data-transition="fade">
+	                   
+	                   	<div class="small-10 column rPad">
+	                        <div class="nSucursal">{{titulo}}</div>
+	                     
+	                    </div>
+
+	                    
+	                    <div class="small-1 column rPad">
+	                        <div class="fNaranja"> 
+	                        <img src="img/fNaranja.png">
+	                        </div>
+	                    </div>
+	                </a>
+	            </li>
+	            {{/items}}
+	        </ul>
+
+	        {{#if items.length==0}}
+	        	<h4 style="margin:20px;"> no existen noticias </h4>
+	        {{/if}}
+
+	    </div>
+	</div>
+
+</script>
+
+
+
+<!-- Caclculadora  ============================================================-->
+<script id='calculadoraT' type='text/ractive'>
+
+  <div id="wrapperList" >
+      <div id="scroller" >
+
+        <div class="small-12 column">
+        <div class="tit1 gaptop2 gapbot">Calculadora de equivalencias</div>
+
+        <form id="calc">
+
+
+ 
+
+        <div class="small-12column">
+        <select name="corti1" size="1">
+              <option value="1">Hidrocortisona</option>
+              <option value="1.25">Cortisona</option>
+              <option value="0.2">Metilprednisolona</option>
+              <option value="0.25">Prednisolona</option>
+              <option value="0.25">Prednisona</option>
+              <option value="0.03">Betametasona</option>
+              <option value="0.04">Dexametasona</option>
+              <option value="0.3">Deflazacort</option>
+              <option value="0.1">Fludrocortisona</option>
+              <option value="0.2">Triamcinolona</option>
+              <option selected value="0.1">Parametasona</option></select>
+
+       </div>       
+
+
+        <input placeholder="Dosis Mg."  name="mg">
+
+       <div class="small-12 column"></div>
+         
+
+        <select name="corti2" size="1">
+              <option value="1">Hidrocortisona</option>
+              <option selected value="1.25">Cortisona</option>
+              <option value="0.2">Metilprednisolona</option>
+              <option value="0.25">Prednisolona</option>
+              <option value="0.25">Prednisona</option>
+              <option value="0.03">Betametasona</option>
+              <option value="0.04">Dexametasona</option>
+              <option value="0.3">Deflazacort</option>
+              <option value="0.1">Fludrocortisona</option>
+              <option value="0.2001">Triamcinolona</option>
+              <option value="0.1001">Parametasona</option>
+              </select>
+
+      <div class="small-12 column">
+      <input type="button" data-theme="b" name="Calculate" value="Calcular" onclick='calcEqui(this.form)'>           
+      </div>
+
+
+      <div type="text" id="BeeValue" class="gaptop2 gapbot"></div>
+
+      </form>
+
+       <div class="small-12 column">
+      <div id="divResultado0" style="text-align: center;"></div>
+      </div>
+
+      <div class="small-12 column">
+      <div id="divResultado1" style="text-align: center;"></div>
+      </div>
+
+      <div class="small-12 column">
+      <div id="divResultado" style="text-align: center;"></div>
+      </div>
+
+
+      </div>
+
+      </div>
+  </div>
+
+</script>
+
+<!--  Secciones Historico  ============================================================-->
+<script id='seccsExp' type='text/ractive'>
+    <h1>{{nombre}}</h1>
+    <div id="wrapperList">
+        <div id="scroller">
+            <ul data-role="listview" id="listview">
+                {{#items}}
+                <li data-icon="false">
+                    <a class="autoli" on-tap="clickSecc" data-transition="fade">
+                        <div class="small-10 column rPad">
+                            <div class="nSucursal">{{secname}} </div>
+                        </div>
+                        <div class="small-1 column rPad">
+                            <div class="fNaranja">
+                                <img src="img/fNaranja.png">
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {{/items}}
+            </ul>
+        </div>
+    </div>
+</script>
+
+
+<!--  Detalle Producto ============================================================-->
+<script id='productoDetT' type='text/ractive'>
+
+<div id="wrapperInfo" class="wrapper">
+    <div id="scroller">
+        <div class="conte">
+            <div class="small-12 column collapse gapbot">
+                
+
+               <div class="small-12 column gaptop">
+               	<div class="tit1">{{nombre}}</div>
+               </div>
+
+
+               {{#if secc==1}}
+
+               <div class="small-12 column gaptop">
+               	<div class="titSec">Generales</div>
+               	 <div class="small-12 column gaptop">
+               	<img src="{{serverURL}}{{imagen[0].thumbnailUrl}}">
+               </div> 
+               	<div class="textSec gaptop">{{{general}}}</div>
+
+              
+               </div>
+               {{/if}}
+
+                {{#if secc==2}}
+               <div class="small-12 column gaptop">
+               	<div class="titSec">Reacciones secundarias y adversas</div>
+               	<div class="textSec gaptop">{{{reacciones}}}</div>
+               </div>
+               {{/if}}
+
+               {{#if secc==3}}
+               <div class="small-12 column gaptop">
+               <div class="titSec">Dosis</div>
+               <div class="textSec gaptop">{{{dosis}}}</div>
+               </div>
+               {{/if}}
+
+
+            	
+
+            </div>
+        </div>
+    </div>
+</div>
+	
+ <div data-role="footer">    
+  <div data-role="navbar">
+    <ul>
+      <li><a on-click="sec1" >General</a></li>
+      <li><a on-click="sec2" >Reacciones</a></li>
+      <li><a on-click="sec3" >Dosis</a></li>
+    </ul>
+  </div><!-- /navbar -->
+</div>
+
+</script>
+
+
+
+<!--  Detalle Ayuda ============================================================-->
+<script id='ayudaDetT' type='text/ractive'>
+
+<div id="wrapperInfo" class="wrapper">
+    <div id="scroller">
+        <div class="conte">
+            <div class="small-12 column collapse gapbot">
+                
+
+               <div class="small-12 column gaptop">
+               	<img src="{{serverURL}}{{imagen[0].thumbnailUrl}}">
+               </div> 
+          
+
+            	
+
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+
+<!--  Detalle Noticia ============================================================-->
+<script id='noticiaDetT' type='text/ractive'>
+
+<div id="wrapperInfo" class="wrapper">
+    <div id="scroller">
+        <div class="conte">
+            <div class="small-12 column collapse gapbot">
+                
+
+              <!-- <div class="small-12 column gaptop">
+               	{{serverURL}} {{imagen[0].thumbnailUrl}}
+               	<img src="{{serverURL}} {{imagen[0].thumbnailUrl}}">
+               </div> -->
+
+
+               <div class="small-12 column gaptop">
+               	{{{descripcion}}}
+               	
+               </div>
+
+
+            	
+
+            </div>
+        </div>
+    </div>
+</div>
+</script>
+
+
+
+<!--  MENU ============================================================-->
+<script id='menuT' type='text/html'>
+ 
+
+
+    <div data-role="panel" data-position="right" data-position-fixed="true" data-display="overlay" data-theme="b" id="add-form">
+
+      
+            <div class="cardName gapbot">{{userData.nombre}}</div>
+
+        	<br>
+
+
+
+            <button on-tap="cerrarsesion" class="ui-btn" >cerrar sesión</button>
+
+
+            <div class="version">versión 1.3.3</div>
+
+    </div><!-- /panel -->
+
+
+
+		<div id="galCont">
+				<div on-tap="closeZoom" class="closeZoom">X</div>
+				 <div id="cardRepZoom" >
+            <div class="cardName">{{userData.nombre}}</div>
+             <div class="cardId">{{userData.cardHypen}}</div>
+            <div class="cardVenc">{{userData.vencimiento}}</div>
+            <!--<div class="cardCCV">{{userData.ccv}}</div> -->
+
+            </div>
+
+
+		</div>
+
+</script>
+
+

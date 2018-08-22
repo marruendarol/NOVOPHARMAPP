@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NOVOPHARM</title>
+
+<!--<meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">-->
+
+
+<link rel="stylesheet" href="css/foundation.min.css">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="css/main.css">
+<link rel='stylesheet' href='css/jquery.mobile.simultaneous-transitions-replace.css'/>
+<link rel="stylesheet" href="css/swipebox.min.css">
+<link rel="stylesheet" href="css/fullcalendar.min.css">
+
+<script src="js/lib/iscroll.js"></script>
+<script src="cordova.js"></script>
+
+<script src="js/lib/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+   $(document).bind("mobileinit", function(){
+     $.mobile.hashListeningEnabled = false;
+   });
+</script>
+<script src="js/lib/jquery.mobile.simultaneous-transitions-replace.js"></script>
+<script src="js/lib/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/lib/jquery.animate-colors-min.js"></script>
+
+
+<script src="js/lib/foundation/foundation.js"></script>
+<script src="js/lib/ractive.js"></script>
+
+<script src="js/lib/moment.min.js"></script>
+
+<script src="js/lib/ractive-events-keys.js"></script>
+<script src="js/lib/ractive-events-tap.js"></script>
+<script src="js/lib/ractive-events-hover.js"></script>
+
+<script src="js/lib/fullcalendar.min.js"></script>
+<script src="js/lib/lang-all.js"></script>
+
+<script src="js/lib/tappy.js"></script>
+
+
+<script src="js/lib/socket.io-1.2.0.js"></script>   <!-- SOCKET IO  -->
+
+<!-- <script src="js/lib/hilitor.js"></script>-->
+<script src='js/utilities/utilities.js'></script>
+
+
+<script src="js/swipebox/jquery.swipebox.js"></script>
+
+
+<!-- CONTROLLERS -->
+<script src="js/controllers/ctrl_core.js"></script>     <!-- ROUTE CONTROLLER -->
+<script src="js/controllers/mainController.js"></script>  <!-- FOUNDATION &  DB CONTROLLER -->
+<script src="js/controllers/ctrl_main.js"></script>   <!-- START CORDOVA CONTROLLER -->
+
+<script src="js/controllers/ctrl_home.js"></script>   <!-- START CORDOVA CONTROLLER -->
+
+<!--
+<script src='https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBcrQxNRRRn5djIHjj5fXV7TP8dLz0WqN8'></script>-->
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=yes" />
+<meta name="msapplication-tap-highlight" content="no" />
+
+
+</head>
+  <body>
+
+
+
+<div id="container">
+<!-- ********************************************************************* -->
+<!--<div data-role="page" id="initialBlank"></div>-->
+<!-- ********************************************************************* -->
+<div data-role="page" id="login" class="mainBackI">
+
+       
+     <div role="main" id="loginP" class="ui-content "></div><!-- /content -->
+
+</div>
+<!-- ********************************************************************* -->
+
+
+<div data-role="page" id="mainScreen">
+  
+</div>
+<!-- MAIN LIST ********************************************************************* -->
+<div data-role="page" id="list">
+    <div data-role="header" data-position="fixed">
+         <div class="small-2 column rPad">
+            <div class="hButton"  data-direction="reverse"><img src="img/icoSolo.png"></div>
+        </div>
+         <div class="small-8 column rPad">
+              <div class="titleList"></div>
+         </div>
+        
+         <div class="small-2 column rPad">
+          <!--  <div class="bButton"  data-direction="reverse"><img src="img/menu.png"></div> -->
+        </div>  
+    </div>
+
+
+<!-- PRODUCTOS ********************************************************************* -->  
+ <div role="main" id="listProductoCont" class=""></div><!-- /content -->
+</div>
+
+
+
+
+<div data-role="page" id="productoDet">
+      
+    <div data-role="header" data-position="fixed">
+      <div class="small-2 column rPad">
+            <div class="bButton"  data-direction="reverse"><img src="img/backArrow.png"></div>
+        </div>
+         <div class="small-8 column rPad">
+              <div id="titleList" class="titleList">Producto</div>
+         </div>
+         <div class="small-2 column rPad">
+         <!--   <div class="hButton"  data-direction="reverse"><img src="img/home.png"></div>-->
+        </div>   
+    </div>
+
+    <div role="main" id="productoDetP" class=""></div><!-- /content -->
+</div>
+
+<!-- ********************************************************************* -->
+
+
+<div data-role="page" id="ayudaDet">
+      
+    <div data-role="header" data-position="fixed">
+      <div class="small-2 column rPad">
+            <div class="bButton"  data-direction="reverse"><img src="img/backArrow.png"></div>
+        </div>
+         <div class="small-8 column rPad">
+              <div id="titleList" class="titleList">Ayuda</div>
+         </div>
+         <div class="small-2 column rPad">
+         <!--   <div class="hButton"  data-direction="reverse"><img src="img/home.png"></div>-->
+        </div>   
+    </div>
+
+    <div role="main" id="ayudaDetP" class=""></div><!-- /content -->
+
+</div>
+
+<!-- ********************************************************************* -->
+
+
+
+<div data-role="page" id="noticiaDet">
+      
+    <div data-role="header" data-position="fixed">
+      <div class="small-2 column rPad">
+            <div class="bButton"  data-direction="reverse"><img src="img/backArrow.png"></div>
+        </div>
+         <div class="small-8 column rPad">
+              <div id="titleList" class="titleList">Noticia</div>
+         </div>
+         <div class="small-2 column rPad">
+           <!-- <div class="hButton"  data-direction="reverse"><img src="img/home.png"></div> -->
+        </div>   
+    </div>
+
+    <div role="main" id="noticiaDetP" class=""></div><!-- /content -->
+
+</div>
+
+
+
+<div data-role="page" id="calculadora">
+      
+    <div data-role="header" data-position="fixed">
+      <div class="small-2 column rPad">
+            <div class="bButton"  data-direction="reverse"><img src="img/backArrow.png"></div>
+        </div>
+         <div class="small-8 column rPad">
+              <div id="titleList" class="titleList">Calculadora</div>
+         </div>
+         <div class="small-2 column rPad">
+         <!--   <div class="hButton"  data-direction="reverse"><img src="img/home.png"></div>-->
+        </div>   
+    </div>
+
+    <div role="main" id="calculadoraP" class=""></div><!-- /content -->
+
+</div>
+
+
+
+<div id="templateLoader" style="display:none"></div>
+<div class="ui-loader-background"> </div>
+
+<div data-role="popup" data-transition="pop" id="pop1" data-overlay-theme="b" data-theme="a" data-dismissible="false">
+    <div data-role="header" data-theme="a" class="ui-corner-top ui-header ui-bar-a" role="banner">
+                <div id="pop_Title" style="color:#666;" class="loaderT ui-title" role="heading" aria-level="1"></div>
+            </div>
+    <div role="main" class="ui-content">
+    <p id="pop_text"></p>
+        <a href="#" class="ui-btn ui-corner-all ui-btn-b ui-btn-icon-left ui-icon-check" data-rel="back" data-transition="pop">Aceptar</a>
+    </div>
+</div>
+
+
+
+  </body>
+</html>
