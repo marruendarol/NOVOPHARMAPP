@@ -36,6 +36,18 @@
     <preference name="SplashShowOnlyFirstTime" value="true" />
     <splash src="splash.png" />
     <icon src="icon.png" />
+    
+    <icon src="icon-60@3x.png" platform="ios" width="180" height="180" />
+
+<!-- iPhone / iPod Touch  -->
+<icon src="icon-60.png" platform="ios" width="60" height="60" />
+<icon src="icon-60@2x.png" platform="ios" width="120" height="120" />
+
+<!-- iPad -->
+<icon src="icon-76.png" platform="ios" width="76" height="76" />
+<icon src="icon-76@2x.png" platform="ios" width="152" height="152" />
+<icon src="icon-83.5@2x.png" platform="ios" width="167" height="167" />
+
     <splash height="480" platform="ios" src="Default.png" width="320" />
     <splash height="960" platform="ios" src="Default@2x.png" width="640" />
     <splash height="1136" platform="ios" src="Default-568h@2x.png" width="640" />
