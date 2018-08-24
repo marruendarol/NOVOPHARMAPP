@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="305cd " id="com.nucleo.novopharm" version="1.0.11" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="305cd " id="com.nucleo.novopharm" version="1.0.12" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>Novopharm</name>
     <description>
        Novopharm
@@ -78,7 +78,6 @@
     <allow-intent href="*" />
     <allow-navigation href="*" />
     <preference name="EnableViewportScale" value="false" />
-    <preference name="phonegap-version" value="cli-8.0.0" />
 
  
     <access launch-external="yes" origin="geo:*" />
@@ -110,8 +109,7 @@
     <allow-navigation href="https://*/*" />
     <allow-navigation href="wss://*/*" />
     <allow-navigation href="data:*" />
-    <engine name="ios" spec="~4.0.0" />
-    <engine name="android" spec="~6.0.0" />
+
     <plugin name="cordova-plugin-device" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
